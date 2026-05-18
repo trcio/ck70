@@ -1,4 +1,5 @@
 #include "hidapi.h"
+#include "hidapi_darwin.h"
 #include <iomanip>
 #include <iostream>
 #include <vector>
@@ -433,6 +434,9 @@ int main(int argc, char** argv) {
     std::cerr << "Failed to initialize HID" << std::endl;
     return 1;
   }
+
+  // disable exclusive/seize mode - required on macos26+ where kIOHIDOptionsTypeSeizeDevice hangs without Input Monitoring permission
+  hid_darwin_set_open_exclusive(0);
 
   {
     Keyboard keyboard;

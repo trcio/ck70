@@ -19,7 +19,7 @@ chmod +x build.sh
 
 you need xcode command line tools installed (you will likely be prompted to install them after running build.sh)
 
-confirmed working on m2 max, macOS 14.2.1
+confirmed working on `m2 max sonoma 14.2.1` & `m1 pro tahoe 26.3`
 
 # usage
 
